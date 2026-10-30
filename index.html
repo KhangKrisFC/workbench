@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f6f7">
+<title>Ken Đặng · Personal Workbench</title>
+<style>
+:root{color-scheme:light;--ink:#25282d;--muted:#737981;--soft:#f3f4f6;--paper:#fff;--white:#fff;--line:#e2e5e9;--accent:#f17832;--accent-dark:#c85112;--accent-soft:#fff0e5;--green:#587b61;--green-soft:#e5eee3;--blue:#647e91;--blue-soft:#e5edf1;--lav:#857396;--lav-soft:#eee8f2;--shadow:0 12px 32px rgba(29,35,43,.07);font-family:Inter,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}body{margin:0;background:radial-gradient(ellipse at 70% 10%,#fff5ef 0,transparent 40%),var(--soft);color:var(--ink);min-height:100vh}.shell{min-height:100vh;display:grid;grid-template-columns:228px minmax(0,1fr)}
+aside{padding:22px 15px 20px 20px}.brand{display:flex;align-items:center;gap:11px;padding:11px 9px 25px}.brand-mark{width:38px;height:38px;border-radius:14px;background:linear-gradient(145deg,#e99a70,#c76845);color:white;display:grid;place-items:center;font-size:19px;box-shadow:0 5px 14px #c8795540}.brand-title{font-weight:750;font-size:15px;letter-spacing:-.02em}.brand-sub{font-size:11px;color:var(--muted);margin-top:3px}.nav-group{display:grid;gap:5px}.nav-label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:#a99a91;padding:13px 11px 6px}.nav-item{display:flex;gap:11px;align-items:center;min-height:42px;padding:9px 11px;border-radius:13px;text-decoration:none;color:#746b64;font-size:13px;transition:.18s}.nav-item .glyph{width:19px;text-align:center;font-size:15px;color:#a9826e}.nav-item:hover,.nav-item.active{background:#fffaf7;color:var(--ink);box-shadow:0 3px 12px #704a3710}.nav-item.active .glyph{color:var(--accent-dark)}.nav-divider{height:1px;background:var(--line);margin:15px 8px 6px}.side-note{margin:26px 5px 0;padding:14px;border:1px solid #ead9ce;border-radius:15px;background:#fff7f1;color:#796d65;font-size:11px;line-height:1.6}.side-note strong{display:block;color:var(--accent-dark);font-size:11px;margin-bottom:4px}
+main{min-width:0;padding:27px clamp(18px,3.3vw,54px) 42px 20px;max-width:1510px;width:100%;margin:0 auto}.topline{display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--muted);font-size:12px;margin-bottom:21px}.today-date{text-transform:capitalize}.sample-badge{display:inline-flex;align-items:center;gap:7px;background:#fff8f3;border:1px solid #ebd8cb;color:#8c624c;border-radius:999px;padding:7px 11px;font-size:11px}.sample-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}.hero{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;margin-bottom:22px}.hero-copy{max-width:760px}.hero h1{font-size:clamp(30px,4.2vw,52px);letter-spacing:-.055em;line-height:1.04;margin:0 0 11px;font-weight:690}.hero p{margin:0;color:#786e67;font-size:14px;line-height:1.55}.hero-note{margin-top:9px!important;color:#9a6b52!important;font-size:12px!important}.hero-mark{flex:none;background:#fffaf7;border:1px solid #f0dfd5;border-radius:18px;padding:13px 17px;min-width:178px;box-shadow:var(--shadow)}.hero-mark strong{display:block;font-size:14px}.hero-mark span{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+.capture{display:flex;align-items:center;gap:10px;padding:9px 10px 9px 16px;background:var(--white);border:1px solid #efe1d8;border-radius:16px;box-shadow:var(--shadow);margin-bottom:28px}.capture input{border:0;outline:0;min-width:0;flex:1;background:transparent;color:var(--ink);font:inherit;font-size:13px;padding:8px 0}.capture input::placeholder{color:#a69b94}.capture-actions{display:flex;gap:7px;align-items:center}.action{font:inherit;border:0;cursor:pointer;border-radius:10px;padding:9px 12px;background:#f8eee8;color:#7e5c49;font-size:11px;white-space:nowrap;transition:.18s}.action:hover{background:#f2ddd0;color:#633c2b}.capture-submit{border:0;border-radius:11px;background:var(--accent);color:white;width:38px;height:38px;font-size:21px;line-height:1;cursor:pointer;transition:.18s}.capture-submit:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:26px 0 12px}.section-head h2{margin:0;font-size:19px;letter-spacing:-.025em}.section-head p{margin:0;color:#9a8e86;font-size:11px}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.stat-card{background:rgba(255,250,247,.88);border:1px solid #efe0d6;border-radius:19px;padding:18px 18px 16px;box-shadow:var(--shadow);min-height:146px;display:flex;flex-direction:column}.stat-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.stat-name{font-size:12px;color:#776d66}.stat-symbol{width:31px;height:31px;border-radius:11px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent-dark);font-size:14px}.stat-value{font-size:clamp(20px,2.5vw,28px);font-weight:700;letter-spacing:-.06em;margin-top:9px}.stat-target{font-size:11px;color:#8b7d75;margin-left:5px;letter-spacing:0;font-weight:500}.stat-copy{font-size:11px;color:#887d76;line-height:1.5;margin-top:auto;padding-top:8px}.metric-progress{height:5px;border-radius:6px;background:#f0e4dd;margin-top:11px;overflow:hidden}.metric-progress span{display:block;height:100%;background:var(--accent);border-radius:6px}.stat-card:nth-child(2) .stat-symbol{background:var(--green-soft);color:var(--green)}.stat-card:nth-child(2) .metric-progress span{background:var(--green)}.stat-card:nth-child(3) .stat-symbol{background:var(--blue-soft);color:var(--blue)}.stat-card:nth-child(3) .metric-progress span{background:var(--blue)}.stat-card:nth-child(4) .stat-symbol{background:var(--lav-soft);color:var(--lav)}.stat-card:nth-child(4) .metric-progress span{background:var(--lav)}
+.milestones{margin-top:13px;background:rgba(255,250,247,.75);border:1px solid #efe0d6;border-radius:19px;box-shadow:var(--shadow);padding:5px 19px}.milestone{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;padding:13px 0;border-bottom:1px solid #f0e5df}.milestone:last-child{border-bottom:0}.milestone-item{display:flex;align-items:flex-start;gap:9px;min-width:0}.dot{flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:4px}.dot.open{background:transparent;border:1px solid #bca99d}.milestone-title{font-size:11px;font-weight:600;line-height:1.35}.milestone-date{font-size:10px;color:#9b8e86;margin-top:4px}
+.today-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.today-card{background:rgba(255,250,247,.88);border:1px solid #efe0d6;border-radius:18px;padding:17px 18px;box-shadow:var(--shadow);min-height:123px}.today-label{font-size:11px;color:#857970}.today-value{font-size:28px;font-weight:690;letter-spacing:-.05em;margin-top:8px}.today-value small{font-size:12px;letter-spacing:0;font-weight:500;color:#756b64}.today-copy{font-size:10px;color:#9a8e86;margin-top:6px;line-height:1.4}.mini-track{height:4px;background:#f0e4dd;border-radius:6px;margin-top:10px}.mini-track span{height:100%;display:block;border-radius:6px;background:#d88460}
+.lower-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}.module{background:rgba(255,250,247,.78);border:1px solid #efe0d6;border-radius:19px;padding:17px 18px;box-shadow:var(--shadow);min-width:0}.module.primary{grid-column:span 2;background:linear-gradient(145deg,#fffaf7,#fff4ed)}.module-title-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.module h3{font-size:14px;margin:0;letter-spacing:-.02em}.module-kicker{font-size:10px;color:#a08473}.module-desc{font-size:11px;line-height:1.5;color:#8d8179;margin:7px 0 12px}.item-list{list-style:none;margin:0;padding:0}.item-row{display:flex;align-items:center;gap:9px;padding:10px 0;border-top:1px solid #f0e5df;min-width:0}.item-row:first-child{border-top:0}.check{flex:none;width:16px;height:16px;border-radius:6px;border:1px solid #d7b9a5;background:#fffdfa;color:var(--accent-dark);font-size:10px;display:grid;place-items:center;cursor:pointer;padding:0}.check[aria-pressed="true"]{background:#e8f0e6;border-color:#cadbc7;color:#577b5c}.item-text{font-size:11px;line-height:1.4;min-width:0;flex:1}.item-text.done{text-decoration:line-through;color:#a59a93}.item-meta{font-size:9px;color:#a3978f;white-space:nowrap}.topic-number{flex:none;width:23px;height:23px;border-radius:8px;display:grid;place-items:center;background:#f7e9df;color:#96684e;font-size:10px}.topic-number.blue{background:#e5edf1;color:#58768b}.topic-number.green{background:#e5eee3;color:#56785d}.topic-number.lav{background:#eee8f2;color:#806c92}.note-row{align-items:flex-start}.note-kind{font-size:9px;color:#9a6a50;background:#f8e9df;border-radius:999px;padding:3px 7px;white-space:nowrap}.note-delete{border:0;background:transparent;color:#a99b93;font-size:15px;cursor:pointer;padding:4px}.note-delete:hover{color:#9e4e32}.note-empty{padding:13px 0;color:#a3968e;font-size:11px;line-height:1.5}
+.quick-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.quick-entry{display:block;text-decoration:none;color:inherit;background:rgba(255,250,247,.74);border:1px solid #efe0d6;border-radius:17px;padding:15px 17px;box-shadow:var(--shadow);transition:transform .18s,background .18s}.quick-entry:hover{transform:translateY(-2px);background:#fffdfb}.quick-entry strong{display:flex;align-items:center;gap:8px;font-size:12px}.quick-entry strong span{color:var(--accent-dark);font-size:14px}.quick-entry p{margin:7px 0 0;color:#897e76;font-size:10px;line-height:1.5}.footer-note{text-align:center;color:#a3968e;font-size:10px;margin:25px 0 0}
+@media(max-width:1080px){.shell{grid-template-columns:190px minmax(0,1fr)}aside{padding-left:14px}.stats,.today-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.lower-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.module.primary{grid-column:span 2}}
+@media(max-width:700px){.shell{display:block}aside{padding:12px 14px 7px;position:sticky;top:0;z-index:5;background:rgba(246,233,226,.96);backdrop-filter:blur(12px)}.brand{padding:3px 3px 10px}.brand-mark{width:33px;height:33px;border-radius:12px}.nav-group{display:flex;overflow-x:auto;gap:4px;padding-bottom:4px}.nav-label,.nav-divider,.side-note{display:none}.nav-item{min-height:36px;padding:7px 10px;white-space:nowrap;font-size:11px;gap:7px}.nav-item .glyph{width:auto}main{padding:16px 14px 30px}.topline{margin-bottom:17px}.hero{align-items:flex-start}.hero-mark{display:none}.hero h1{font-size:34px}.hero p{font-size:12px}.capture{flex-wrap:wrap;padding:9px 10px}.capture input{flex-basis:calc(100% - 50px)}.capture-actions{order:3;width:100%;overflow-x:auto;padding:2px 0}.capture-submit{order:2}.section-head{align-items:flex-start;flex-direction:column;gap:4px}.stats,.today-grid{gap:9px}.stat-card{padding:14px;min-height:134px}.stat-value{font-size:27px}.today-card{padding:14px;min-height:112px}.milestones{padding:4px 13px}.milestone{grid-template-columns:1fr;gap:0;padding:8px 0}.milestone-item{padding:7px 0}.lower-grid{grid-template-columns:1fr}.module.primary{grid-column:span 1}.quick-grid{grid-template-columns:1fr;gap:9px}.quick-entry{padding:13px 15px}.item-meta{display:none}}
+@media(max-width:380px){.hero h1{font-size:30px}.stats,.today-grid{grid-template-columns:1fr 1fr}.stat-card{min-height:143px}.stat-target{display:block;margin:3px 0 0}.capture-actions .action{padding:8px 9px}}
+:root{--ink:#25282d;--muted:#737981;--soft:#f3f4f6;--paper:#fff;--white:#fff;--line:#e2e5e9;--accent:#f17832;--accent-dark:#c85112;--accent-soft:#fff0e5;--shadow:0 12px 32px rgba(29,35,43,.07)}
+body{background:radial-gradient(ellipse at 76% 7%,#fff1e7 0,transparent 38%),var(--soft);color:var(--ink)}
+.brand-mark{background:linear-gradient(145deg,#ff9a52,#ed6524);box-shadow:0 5px 14px #e86e3a35}
+.nav-item{color:#555c65}.nav-item .glyph{color:#e2763c}.nav-item:hover,.nav-item.active{background:#fff;color:var(--ink);box-shadow:0 3px 12px #33333310}.nav-item.active .glyph{color:var(--accent-dark)}
+.nav-label{color:#858b93}.nav-divider{background:#e0e3e7}.side-note{border-color:#e2e5e9;background:#fff;color:#646b73}.side-note strong{color:var(--accent-dark)}
+.hero p{color:#626a73}.hero-note{color:#c45b25!important}.hero-mark,.capture,.stat-card,.milestones,.today-card,.module,.quick-entry{background:#fff;border-color:#e3e6e9;box-shadow:0 10px 28px rgba(35,40,45,.055)}
+.sample-badge{background:#fff7f1;border-color:#f5d8c5;color:#a84a18}.action{background:#fff1e7;color:#a64a1a}.action:hover{background:#ffe2cd;color:#82390f}.capture-submit{background:var(--accent)}.capture-submit:hover{background:var(--accent-dark)}
+.stat-card:nth-child(n) .stat-symbol{background:var(--accent-soft);color:var(--accent-dark)}.stat-name,.today-label{color:#646b73}.stat-copy,.today-copy,.module-desc,.quick-entry p{color:#737981}.stat-target{color:#737981}
+.module.primary{background:linear-gradient(145deg,#fff,#fff6ef);border-color:#f2d6c3}.module-kicker{color:#b35a29}.topic-number,.topic-number.blue,.topic-number.green,.topic-number.lav{background:#fff0e5;color:#b8541d}.note-kind{background:#fff0e5;color:#a84a18}.item-row{border-color:#eceef0}.quick-entry:hover{background:#fff8f2}.quick-entry strong span{color:var(--accent-dark)}
+@media(max-width:700px){aside{background:rgba(243,244,246,.96)}}
+.capture-log{background:#fff;border:1px solid #e3e6e9;border-radius:16px;padding:11px 16px;margin:-14px 0 28px;box-shadow:0 8px 24px rgba(35,40,45,.045)}.capture-log-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:3px}.capture-log-head strong{font-size:11px}.capture-log-head span{font-size:10px;color:#858b93}.capture-log .item-row:first-child{border-top:1px solid #eceef0}.capture-log .item-row{padding:8px 0}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside aria-label="Main navigation">
+    <div class="brand"><div class="brand-mark" aria-hidden="true">✦</div><div><div class="brand-title">Ken’s Workbench</div><div class="brand-sub">Football · Marketing · Video</div></div></div>
+    <nav class="nav-group" aria-label="Main">
+      <div class="nav-label">Main</div>
+      <a class="nav-item active" href="#dashboard"><span class="glyph" aria-hidden="true">⌂</span>Dashboard</a>
+      <a class="nav-item" href="#football"><span class="glyph" aria-hidden="true">⚽</span>Football</a>
+      <a class="nav-item" href="#content-studio"><span class="glyph" aria-hidden="true">▣</span>Content Studio</a>
+      <a class="nav-item" href="#marketing"><span class="glyph" aria-hidden="true">📈</span>Marketing</a>
+    </nav>
+    <div class="nav-divider"></div>
+    <nav class="nav-group" aria-label="Workspace">
+      <div class="nav-label">Workspace</div>
+      <a class="nav-item" href="#content-studio"><span class="glyph" aria-hidden="true">▤</span>Projects</a>
+      <a class="nav-item" href="#football-ideas"><span class="glyph" aria-hidden="true">◇</span>Ideas</a>
+      <a class="nav-item" href="#marketing"><span class="glyph" aria-hidden="true">↗</span>Learning</a>
+      <a class="nav-item" href="#settings"><span class="glyph" aria-hidden="true">⚙</span>Settings</a>
+    </nav>
+    <div class="side-note" id="settings"><strong>Settings</strong>Values and targets are blank until you choose them. Pháp sư sama is your AI sidekick.</div>
+  </aside>
+  <main>
+    <section id="dashboard">
+      <div class="topline"><span class="today-date" id="today-date">Tuesday · October 27</span><span class="sample-badge">Ken’s personal workspace</span></div>
+      <div class="hero">
+        <div class="hero-copy"><h1 id="greeting">Good evening, Ken!</h1><p>I am interested in football, marketing, and video editing.</p><p class="hero-note">Friendly, energetic, and creative — let’s make something great today.</p></div>
+        <div class="hero-mark"><strong>✦ Your AI sidekick</strong><span>Pháp sư sama · Lark connection pending</span></div>
+      </div>
+      <form class="capture" id="capture-form">
+        <label class="sr-only" for="capture-input">Add a content, football, or marketing note</label>
+        <input id="capture-input" autocomplete="off" placeholder="Capture a thought, idea, or next step…">
+        <div class="capture-actions" role="group" aria-label="Quick actions">
+          <button class="action" type="button" data-kind="Create Content">＋ Create Content</button>
+          <button class="action" type="button" data-kind="Find Football Ideas">＋ Find Football Ideas</button>
+          <button class="action" type="button" data-kind="Plan Marketing">＋ Plan Marketing</button>
+        </div>
+        <button class="capture-submit" type="submit" aria-label="Save quick note">+</button>
+      </form>
+      <div class="capture-log" id="football-ideas" aria-live="polite">
+        <div class="capture-log-head"><strong>Recent captures</strong><span>Saved in this browser</span></div>
+        <ul class="item-list" id="note-list"><li class="note-empty">Nothing saved yet. Use the quick input above to capture your first idea.</li></ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="achievement-title">
+      <div class="section-head"><h2 id="achievement-title">Your interests, at a glance</h2><p>Today’s values and targets are intentionally blank</p></div>
+      <div class="stats">
+        <article class="stat-card"><div class="stat-top"><span class="stat-name">Football ⚽</span><span class="stat-symbol" aria-hidden="true">⚽</span></div><div class="stat-value">— <span class="stat-target">/ —</span></div><div class="stat-copy">Follow football and improve my knowledge of the game.</div></article>
+        <article class="stat-card"><div class="stat-top"><span class="stat-name">Marketing 📈</span><span class="stat-symbol" aria-hidden="true">↗</span></div><div class="stat-value">— <span class="stat-target">/ —</span></div><div class="stat-copy">Learn marketing skills and explore new ideas.</div></article>
+        <article class="stat-card"><div class="stat-top"><span class="stat-name">Video Editing 🎬</span><span class="stat-symbol" aria-hidden="true">▶</span></div><div class="stat-value">— <span class="stat-target">/ —</span></div><div class="stat-copy">Improve my editing skills and create better videos.</div></article>
+        <article class="stat-card"><div class="stat-top"><span class="stat-name">Creativity 🧡</span><span class="stat-symbol" aria-hidden="true">✦</span></div><div class="stat-value">— <span class="stat-target">/ —</span></div><div class="stat-copy">Develop creative ideas for content and personal branding.</div></article>
+      </div>
+    </section>
+    <section id="today" aria-labelledby="today-title">
+      <div class="section-head"><h2 id="today-title">Today’s creative mix</h2><p>A little football, a little strategy, a new idea</p></div>
+      <div class="today-grid">
+        <article class="today-card"><div class="today-label">Watch</div><div class="today-value">⚽</div><div class="today-copy">Catch a match moment worth remembering.</div></article>
+        <article class="today-card"><div class="today-label">Create</div><div class="today-value">🎬</div><div class="today-copy">Turn one interesting moment into a video idea.</div></article>
+        <article class="today-card"><div class="today-label">Share</div><div class="today-value">📈</div><div class="today-copy">Think about who the content is for and why they’ll care.</div></article>
+        <article class="today-card"><div class="today-label">AI sidekick</div><div class="today-value">Ken + AI</div><div class="today-copy">Pháp sư sama can help brainstorm once connected.</div></article>
+      </div>
+    </section>
+    <section aria-labelledby="modules-title">
+      <div class="section-head"><h2 id="modules-title">Your workspace</h2><p>Three spaces for your interests and creative work</p></div>
+                  <div class="lower-grid">
+        <article class="module" id="football">
+          <div class="module-title-row"><h3>Football Zone ⚽</h3><span class="module-kicker">The beautiful game</span></div>
+          <p class="module-desc">A space for my football interests and updates.</p>
+          <ul class="item-list">
+            <li class="item-row"><span class="topic-number">⚽</span><span class="item-text">Football News</span></li>
+            <li class="item-row"><span class="topic-number blue">★</span><span class="item-text">Player Reviews</span></li>
+            <li class="item-row"><span class="topic-number green">▶</span><span class="item-text">Match Highlights</span></li>
+          </ul>
+        </article>
+        <article class="module primary" id="content-studio">
+          <div class="module-title-row"><h3>Content Creation 🎬</h3><span class="module-kicker">MOST IMPORTANT · featured</span></div>
+          <p class="module-desc">Plan and improve my video content. This is where football, editing, and marketing come together.</p>
+          <ul class="item-list">
+            <li class="item-row"><span class="topic-number">✦</span><span class="item-text">Video Ideas</span><span class="item-meta">Capture the hook</span></li>
+            <li class="item-row"><span class="topic-number blue">✂</span><span class="item-text">Editing Projects</span><span class="item-meta">Shape the story</span></li>
+            <li class="item-row"><span class="topic-number green">▦</span><span class="item-text">Content Calendar</span><span class="item-meta">Plan the release</span></li>
+          </ul>
+        </article>
+        <article class="module" id="marketing">
+          <div class="module-title-row"><h3>Marketing Hub 🟠</h3><span class="module-kicker">Learn · build · grow</span></div>
+          <p class="module-desc">Learn marketing and build my personal brand.</p>
+          <ul class="item-list">
+            <li class="item-row"><span class="topic-number">↗</span><span class="item-text">Marketing Strategies</span></li>
+            <li class="item-row"><span class="topic-number blue">✦</span><span class="item-text">Brand Development</span></li>
+            <li class="item-row"><span class="topic-number green">◎</span><span class="item-text">Audience Growth</span></li>
+          </ul>
+        </article>
+      </div>    </section>
+
+    <section id="quick-entries" aria-labelledby="quick-title">
+      <div class="section-head"><h2 id="quick-title">Quick entries</h2><p>Jump into your next idea</p></div>
+                  <div class="quick-grid">
+        <a class="quick-entry" id="new-video" href="#content-studio"><strong><span aria-hidden="true">🎬</span>New Video</strong><p>Start a new video editing project.</p></a>
+        <a class="quick-entry" id="football-ideas-entry" href="#football"><strong><span aria-hidden="true">⚽</span>Football Ideas</strong><p>Save ideas for football-related content.</p></a>
+        <a class="quick-entry" id="marketing-notes" href="#marketing"><strong><span aria-hidden="true">🧡</span>Marketing Notes</strong><p>Record marketing ideas and strategies.</p></a>
+      </div>
+    </section>
+    <p class="footer-note" id="learning">Personal workbench for Ken Đặng · values and targets are blank until you set them · quick notes stay in this browser</p>
+  </main>
+</div>
+<script>
+(() => {
+  const dateEl = document.getElementById('today-date');
+  const greetingEl = document.getElementById('greeting');
+  const now = new Date();
+  dateEl.textContent = new Intl.DateTimeFormat('en-US', { weekday: 'long', month: 'long', day: 'numeric' }).format(now);
+  const hour = now.getHours();
+  greetingEl.textContent = `${hour < 11 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening'}, Ken!`;
+
+  const input = document.getElementById('capture-input');
+  const form = document.getElementById('capture-form');
+  const noteList = document.getElementById('note-list');
+  const storageKey = 'ken-personal-workbench-notes-v1';
+  let selectedKind = 'Create Content';
+  const placeholderByKind = {
+    'Create Content': 'Add a video concept, edit, or project note…',
+    'Find Football Ideas': 'Capture a football moment or content angle…',
+    'Plan Marketing': 'Write down a marketing idea or next step…'
+  };
+  let notes = [];
+  try { notes = JSON.parse(localStorage.getItem(storageKey) || '[]'); } catch { notes = []; }
+  if (!Array.isArray(notes)) notes = [];
+  const saveNotes = () => { try { localStorage.setItem(storageKey, JSON.stringify(notes)); } catch {} };
+  const showEmpty = () => {
+    const empty = document.createElement('li'); empty.className = 'note-empty';
+    empty.textContent = 'Nothing saved yet. Use the quick input above to capture your first idea.';
+    noteList.append(empty);
+  };
+  const renderNote = note => {
+    const item = document.createElement('li'); item.className = 'item-row note-row';
+    const kind = document.createElement('span'); kind.className = 'note-kind'; kind.textContent = note.kind;
+    const body = document.createElement('span'); body.className = 'item-text'; body.textContent = note.text;
+    const time = document.createElement('span'); time.className = 'item-meta'; time.textContent = note.time;
+    const remove = document.createElement('button'); remove.className = 'note-delete'; remove.type = 'button'; remove.textContent = '×'; remove.setAttribute('aria-label', 'Delete note');
+    remove.addEventListener('click', () => { notes = notes.filter(saved => saved.id !== note.id); item.remove(); if (!notes.length) showEmpty(); saveNotes(); });
+    item.append(kind, body, time, remove);
+    return item;
+  };
+  noteList.replaceChildren();
+  if (notes.length) notes.forEach(note => noteList.append(renderNote(note))); else showEmpty();
+  form.querySelectorAll('[data-kind]').forEach(button => button.addEventListener('click', () => {
+    selectedKind = button.dataset.kind; input.placeholder = placeholderByKind[selectedKind]; input.focus();
+  }));
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const text = input.value.trim();
+    if (!text) { input.focus(); return; }
+    noteList.querySelector('.note-empty')?.remove();
+    const note = { id: `${Date.now()}-${Math.random().toString(16).slice(2)}`, kind: selectedKind, text,
+      time: new Intl.DateTimeFormat('en-US', { hour: '2-digit', minute: '2-digit' }).format(new Date()) };
+    notes.unshift(note); noteList.prepend(renderNote(note)); saveNotes(); input.value = '';
+    input.placeholder = 'Capture a thought, idea, or next step…';
+  });
+  document.querySelectorAll('.nav-item').forEach(link => link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active')); link.classList.add('active');
+  }));
+})();
+</script>
+</body>
+</html>
